@@ -177,7 +177,7 @@ def build_pdf(filename):
             Paragraph("<b>Track:</b> Prototype Development &amp; Demonstration", td_style),
         ],
         [
-            Paragraph("<b>GitHub:</b> <u>github.com/shivamguptajk64-code/Fair-Seat-Registration-System</u>", td_style),
+            Paragraph('<b>GitHub:</b> <a href="https://github.com/shivamguptajk64-code/Fair-Seat-Registration-System"><font color="#0284c7"><u>https://github.com/shivamguptajk64-code/Fair-Seat-Registration-System</u></font></a>', td_style),
             Paragraph("<b>Status:</b> Fully Functional Working Prototype (MVP)", td_style)
         ]
     ]
@@ -422,7 +422,7 @@ def build_pdf(filename):
         [Paragraph("Submission Asset", th_style), Paragraph("Access Link / Instructions", th_style), Paragraph("Status", th_style)],
         [
             Paragraph("<b>Public GitHub Repository</b>", td_bold_style),
-            Paragraph("<b>https://github.com/shivamguptajk64-code/Fair-Seat-Registration-System</b>", td_style),
+            Paragraph('<a href="https://github.com/shivamguptajk64-code/Fair-Seat-Registration-System"><font color="#0284c7"><u><b>https://github.com/shivamguptajk64-code/Fair-Seat-Registration-System</b></u></font></a>', td_style),
             Paragraph("<font color='#059669'><b>Active &amp; Public</b></font>", td_style)
         ],
         [
@@ -434,11 +434,6 @@ def build_pdf(filename):
             Paragraph("<b>CLI Concurrency Benchmark</b>", td_bold_style),
             Paragraph("Execute <code>npm run test:concurrency</code> in terminal to verify 500 requests in 29ms.", td_style),
             Paragraph("<font color='#059669'><b>Tested (17k/s)</b></font>", td_style)
-        ],
-        [
-            Paragraph("<b>Local Prototype URLs</b>", td_bold_style),
-            Paragraph("Frontend: <u>http://localhost:5173/</u> | Backend API: <u>http://localhost:4000</u>", td_style),
-            Paragraph("<font color='#059669'><b>Operational</b></font>", td_style)
         ],
         [
             Paragraph("<b>Participant &amp; Pitch Lead</b>", td_bold_style),
