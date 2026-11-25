@@ -6,8 +6,11 @@ import AdminDashboard from './components/AdminDashboard';
 import PitchWalkthrough from './components/PitchWalkthrough';
 import TicketModal from './components/TicketModal';
 
-const API_BASE = 'http://localhost:4000/api';
-const WS_URL = 'ws://localhost:4000';
+const isLocalDev = typeof window !== 'undefined' && window.location.port === '5173';
+const API_BASE = isLocalDev ? 'http://localhost:4000/api' : `${window.location.origin}/api`;
+const WS_URL = isLocalDev 
+  ? 'ws://localhost:4000' 
+  : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`;
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('register');

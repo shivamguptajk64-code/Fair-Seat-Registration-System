@@ -280,6 +280,19 @@ wss.on('connection', (ws) => {
   }));
 });
 
+// Serve client production build if available (Unified Deployment for Render/Railway)
+const path = require('path');
+const fs = require('fs');
+const clientDist = path.join(__dirname, '..', '..', 'client', 'dist');
+
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
+
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`[FairSeat Server] Running on http://localhost:${PORT}`);
